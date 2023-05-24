@@ -1,0 +1,21 @@
+.btn-inline {
+  border: none;
+  color: $color-pink-primary;
+  font-size: inherit;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  background-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.2s;
+
+
+  &:hover {
+    color: $color-Grey-dark-1;
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
