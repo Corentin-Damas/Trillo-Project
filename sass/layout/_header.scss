@@ -1,3 +1,19 @@
+.header {
+  height: 7rem;
+  background-color: $color-white;
+  border-bottom: 1px solid $color-Grey-light-2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include respond(five-break) {
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 11rem;
+  }
+}
+
 .logo {
   height: 3.25rem;
   margin-left: 2rem;
@@ -9,6 +25,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include respond(five-break) {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: $color-Grey-light-2;
+  }
 
   &__input {
     font-family: inherit;

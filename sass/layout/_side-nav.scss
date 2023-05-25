@@ -3,11 +3,24 @@
   list-style: none;
   margin-top: 3.5rem;
 
+  @include respond(third-break) {
+    display: flex;
+    margin: 0;
+  }
+
   &__item {
     position: relative;
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      @include respond(third-break) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include respond(third-break) {
+      flex: 1;
     }
   }
   &__item::before {
@@ -43,6 +56,15 @@
     z-index: 10;
     display: flex;
     align-items: center;
+
+    @include respond(third-break) {
+      justify-content: center;
+      padding: 2rem;
+    }
+    @include respond(four-break) {
+      flex-direction: column;
+      padding: 1.5rem 0.5rem;
+    }
   }
 
   &__icon {
@@ -50,6 +72,13 @@
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor;
+
+    @include respond(four-break) {
+      margin-right: 0;
+      margin-bottom: 0.7rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -58,4 +87,8 @@
   color: $color-Grey-light-4;
   text-align: center;
   padding: 2.5rem;
+
+  @include respond(third-break) {
+    display: none;
+  }
 }

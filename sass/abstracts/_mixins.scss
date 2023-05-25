@@ -1,0 +1,55 @@
+// Media query manager
+
+/*
+0-600px       Phone
+600 - 900px   Tablet portrait
+900 - 1200px  Tablet landscape
+1200 - 1800px Desktock  [normal design created for]
+1800px +      Big Desktock
+
+$breakpoint argument choices:
+- first-break 1200px first design breakpoint
+- second-break 1100px 2nd design breakpoint
+- third-break 900px 3rd design breakpoint
+- four-break 600px 4th design breakpoint
+- five-break 500px 5th design breakpoint
+
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == first-break {
+    @media only screen and (max-width: 75em) {
+      // 1200px
+      @content;
+    }
+  }
+
+  @if $breakpoint == second-break {
+    @media only screen and (max-width: 68.75em) {
+      // 1100px
+      @content;
+    }
+  }
+
+  @if $breakpoint == third-break {
+    @media only screen and (max-width: 56.25em) {
+      // 900px
+      @content;
+    }
+  }
+
+  @if $breakpoint == four-break {
+    @media only screen and (max-width: 37.5em) {
+      // 600px
+      @content;
+    }
+  }
+
+  @if $breakpoint == five-break {
+    @media only screen and (max-width: 31.25em) {
+      // 500px
+      @content;
+    }
+  }
+}

@@ -42,17 +42,29 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    @include respond(four-break) {
+      padding: 0 1.5rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -3px;
+
+    @include respond(four-break) {
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
     font-size: 0.8rem;
     text-transform: uppercase;
+
+    @include respond(four-break) {
+      font-size: 1.8rem;
+    }
   }
 }
 
@@ -62,6 +74,14 @@
   padding: 4.5rem;
   background-color: $color-Grey-light-1;
   border-bottom: $border-bottom-small;
+
+  @include respond(third-break) {
+    padding: 3rem;
+  }
+
+  @include respond(four-break) {
+    flex-direction: column;
+  }
 }
 
 .description {
@@ -70,6 +90,16 @@
   padding: 3rem;
   flex: 0 0 60%;
   margin-right: 4.5rem;
+
+  @include respond(third-break) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+
+  @include respond(four-break) {
+    margin-right: 0rem;
+    margin-bottom: 3rem;
+  }
 }
 
 .user-reviews {
@@ -106,15 +136,17 @@
     width: 1rem;
     margin-right: 0.7rem;
 
-    // older brothers
-    // background-image: url(../img/SVG/circle-right.svg);
-    // background-size: cover;
+    background-image: url(../img/SVG/circle-right.svg);
+    background-size: cover;
 
-    background-color: $color-pink-primary;
-    -webkit-mask-image: url(../img/SVG/circle-right.svg);
-    mask-image: url(../img/SVG/circle-right.svg);
-    -webkit-mask-size: cover;
-    mask-size: cover;
+    @supports (mask-image: url()) or (-webkit-mask-image: url()) {
+      background-color: $color-pink-primary;
+      -webkit-mask-image: url(../img/SVG/circle-right.svg);
+      mask-image: url(../img/SVG/circle-right.svg);
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      background-image: none;
+    }
   }
 }
 
@@ -128,6 +160,10 @@
     margin-right: auto;
   }
 
+  &__friends {
+    display: flex;
+  }
+
   &__photo {
     box-sizing: content-box;
     height: 4rem;
@@ -136,7 +172,7 @@
     border: 3px solid $color-white;
 
     &:not(:last-child) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
     }
   }
 }
@@ -148,6 +184,15 @@
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
+
+  @include respond(third-break) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+
+  @include respond(four-break) {
+    margin-right: 0rem;
+  }
 
   &::before {
     content: "\201C";
@@ -206,6 +251,10 @@
   padding: 3.5rem 0;
   text-align: center;
 
+  @include respond(third-break) {
+    padding: 2.5rem 0;
+  }
+
   &__book-now {
     font-size: 2rem;
     font-weight: 300;
@@ -213,4 +262,3 @@
     margin-bottom: 2.5rem;
   }
 }
-
